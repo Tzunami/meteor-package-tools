@@ -19,7 +19,12 @@ var updatePrice = function(e, res){
                         timestamp: null
                     }});
                 }
-
+				//ETH Ticker exception here also in observeTransaction.js in meteor-dapp-wallet
+				// modify ed = eth, reset eth
+				EthTools.ticker.upsert('ed', {$set: {
+					price: 10,
+					timestamp: null
+				}});
             });
         }
     } else {
@@ -28,10 +33,10 @@ var updatePrice = function(e, res){
 };
 
 // update right away
-HTTP.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR', updatePrice);
+HTTP.get('https://www.cryptocompare.com/api/data/price?fsym=ETH&tsyms=USD,EUR,GBP,CNY,CAD,EUR,GBP,JPY', updatePrice);
     
 
 // update prices
 Meteor.setInterval(function(){
-    HTTP.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR', updatePrice);    
+    HTTP.get('https://www.cryptocompare.com/api/data/price?fsym=ETH&tsyms=USD,EUR,GBP,CNY,CAD,EUR,GBP,JPY', updatePrice);    
 }, 1000 * 30);
