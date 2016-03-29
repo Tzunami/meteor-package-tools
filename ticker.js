@@ -28,15 +28,15 @@ var updatePrice = function(e, res){
             });
         }
     } else {
-        console.warn('Can not connect to https://mini-api.cryptocompare.com to get price ticker data, please check your internet connection.');
+        console.warn('Can not connect to https://www.cryptocompare.com/ to get price ticker data, please check your internet connection.');
     }
 };
 
 // update right away
-HTTP.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,EUR,GBP,CNY,CAD,EUR,GBP,JPY', updatePrice);
+HTTP.get('https://www.cryptocompare.com/api/data/price?fsym=ETH&tsyms=USD,EUR,GBP,CNY,CAD,EUR,GBP,JPY, updatePrice);
     
 
 // update prices
 Meteor.setInterval(function(){
-    HTTP.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,EUR,GBP,CNY,CAD,EUR,GBP,JPY', updatePrice);    
+    HTTP.get('https://www.cryptocompare.com/api/data/price?fsym=ETH&tsyms=USD,EUR,GBP,CNY,CAD,EUR,GBP,JPY', updatePrice);    
 }, 1000 * 30);

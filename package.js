@@ -1,7 +1,7 @@
 Package.describe({
   name: 'earthdollar:tools',
   summary: 'Helper functions for dapps',
-  version: '0.5.3',
+  version: '0.5.4',
   git: 'https://github.com/Tzunami/meteor-package-tools'
 });
 
