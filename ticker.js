@@ -33,7 +33,7 @@ var updatePrice = function(e, res){
 };
 
 // update right away
-HTTP.get('https://www.cryptocompare.com/api/data/price?fsym=ETH&tsyms=USD,EUR,GBP,CNY,CAD,EUR,GBP,JPY, updatePrice);
+HTTP.get('https://www.cryptocompare.com/api/data/price?fsym=ETH&tsyms=USD,EUR,GBP,CNY,CAD,EUR,GBP,JPY', updatePrice);
     
 
 // update prices
