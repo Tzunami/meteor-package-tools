@@ -47,7 +47,6 @@ var supportedCurrencies = function(unit){
     return (unit === 'usd' ||
            unit === 'eur' ||
 		   unit === 'cad' ||
-		   unit === 'ed' ||	
            unit === 'btc');
 };
 
@@ -63,7 +62,7 @@ var getUnit = function(unit){
         unit = LocalStore.get('dapp_etherUnit');
 
         if(!unit) {
-            unit = 'ed';
+            unit = 'ether';
             LocalStore.set('dapp_etherUnit', unit);        
         }
     }
